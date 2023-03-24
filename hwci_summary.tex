@@ -257,7 +257,7 @@ The index values for all species and the landscape are high, reflecting the rela
 \section*{Supplement: Index formulation and calculation}
 \label{S1}
 Index formulation
-In this section we provide details of the calculation of the index. For each indicator, sub-index, and the index, we provide a description of the calculation, an equation, and a brief description of the item and reasoning for its construction. Symbols used in the equations are detailed below in Table \ref{tab:index_params}.
+In this section we provide details of the calculation of the index. For each indicator, sub-index, and the index, we provide a description of the calculation, an equation, and a brief description of the item and reasoning for its construction. Parameters used in the equations are detailed below in Table \ref{tab:index_params}.
 
 
 \begin{table}[ht!]
@@ -282,22 +282,23 @@ In this section we provide details of the calculation of the index. For each ind
     \caption{Definitions of parameters used in used in equations in supplement \ref{S1} for HWC indicators and indices.}
     \label{tab:index_params}
     \begin{tabular}{p{1cm} p{13cm}}
-         $\Psi$ & Landscape Human-wildlife Conflict Index \\
+         $\Psi_m$ & Landscape-mean Human-wildlife Conflict Index \\
+         $\Psi_a$ & Landscape-aggregate Human-wildlife Conflict Index \\
          $X$ ($X_\iota$) &	Species Human-wildlife Conflict Index (for species $\iota$) \\
          $\chi_h$ &	Human dimension sub-index \\
          $\chi_e$ &	Economic dimension sub-index \\
          $\chi_w$ &	Wildlife dimension sub-index \\
-         $H_f$ &	one minus the probability of human-victim incidents \\
+         $H_f$ &	Human dimension frequency indicator; the probability of human-victim incidents \\
          $H_f^\ast$ &  Approximation of $H_f$ \\
-         $H_s$ &	One minus the proportion of human-victim incidents that are human mortalities \\
-         $H_m$ &	Number of human incidents \\
-         $E_f$ &	One minus the probability of economic incidents \\
+         $H_s$ &	Human dimension severity indicator; the proportion of human-victim incidents that are human mortalities \\
+         $H_m$ &	Human dimension magnitude indicator; the number of human incidents \\
+         $E_f$ &	Economic dimension indicator; the probability of economic incidents \\
          $E_f^\ast$ &  Approximation of $E_f$ \\
-         $E_s$ &	One minus the proportion of economic loss \\
-         $E_m$ &	Net economic loss \\
-         $W_f$ &	One minus the probability of wildlife-victim incidents (reprisal killings) given human-centric HWC incidents \\
-         $W_s$ &	Are wildlife-victim incidents occurring given IUCN Red List status  \\
-         $W_m$ &	Number of wildlife-victim incidents \\
+         $E_s$ &	Economic dimension severity indicator; the proportion of economic loss \\
+         $E_m$ &	Economic dimension magnitude indicator; net economic loss \\
+         $W_f$ &	Wildlife dimension frequency indicator; the probability of wildlife-victim incidents given human-centric HWC incidents \\
+         $W_s$ &	Wildlife dimension severity indicator; are wildlife-victim incidents occurring given IUCN Red List status  \\
+         $W_m$ &	Wildlife dimension magnitude indicator; number of wildlife-victim incidents \\
          $j$ & Number of households in the landscape \\
          $m$ &	Number of human mortalities in landscape \\
          $u$ &	Number of households experiencing any human-victim incidents in landscape (including human mortalities). \\
@@ -334,7 +335,7 @@ For practical purposes, it may often not be possible to determine whether the sa
 
 and $H_f^\ast \in [0,1]$.\\
 
-It is likely that for most purposes it will only be possible or calculate $H_f^\ast$.
+It is likely that for most purposes it will only be possible or calculate $H_f^\ast$.\\
 
 
 \subsubsection*{Human dimension --- severity indicator:}
@@ -350,11 +351,11 @@ This indicator, $H_s$ is defined as the proportion of human-victim incidents tha
 
 
 
-where $H_s \in [0,1]$ and zero is the desired state, i.e. no human-victim incidents are occurring. 
+where $H_s \in [0,1]$ and zero is the desired state, i.e. no human-victim incidents are occurring. \\
 
-Constraints on the ranges of $v$ and $m$ are necessary for two reasons: firstly, because if no human-victim incidents occur the indicator should be in it's desired state, but a denominator of zero is undefined, and secondly,  because incidents may involve multiple victims, but the numerator $m$ is a count of total mortalities, the indicator could otherwise become greater than one.
+Constraints on the ranges of $v$ and $m$ are necessary for two reasons: firstly, because if no human-victim incidents occur the indicator should be in it's desired state, but a denominator of zero is undefined, and secondly,  because incidents may involve multiple victims, but the numerator $m$ is a count of total mortalities, the indicator could otherwise become greater than one.\\
 
-This indicator is intended as a coarse measure of the relative severity of incidents, counting the proportion of human incidents that result in mortality. Hs will range from one, where no incidents are mortalities, to zero, when all incidents result in the loss of a human life. This measure will be unable to differentiate among incidents less severe than mortalities, e.g., comparing the loss of a limb to a shark to being intimidated by a swooping bird. This coarseness is intentional because it makes the indicator easy to understand and calculate, and it avoids the need to make difficult, equivocal, or value-laden judgements about the relative severity of a range of incidents. In some cases however this could result in indicator values that appear to indicate a low level of severity, however may mask other differences among landscapes, e.g. frequent physical attacks resulting in human injuries on one landscape but not in another would not be differentiated by this measure. It is important that this context is maintained elsewhere, such as through other appropriate context indicators.
+This indicator is intended as a coarse measure of the relative severity of incidents, counting the proportion of human incidents that result in mortality. $H_s$ will range from zero, where no incidents are mortalities, to one, when all incidents result in the loss of a human life. This measure will be unable to differentiate among incidents less severe than mortalities, e.g., comparing the loss of a limb to a shark to being intimidated by a swooping bird. This coarseness is intentional because it makes the indicator easy to understand and calculate, and it avoids the need to make difficult, equivocal, or value-laden judgements about the relative severity of a range of incidents. In some cases however this could result in indicator values that appear to indicate a low level of severity, however may mask other differences among landscapes, e.g. frequent physical attacks resulting in human injuries on one landscape but not in another would not be differentiated by this measure. It is important that this context is maintained elsewhere, such as through other appropriate context indicators.\\
 
 \subsubsection*{Human dimension --- magnitude indicator:}
 This indicator $H_m$ is simply defined as the number of human-victim incidents in the landscape:
@@ -363,18 +364,18 @@ This indicator $H_m$ is simply defined as the number of human-victim incidents i
     H_m = v
 \end{equation*}
 
-where $H_m \in [0,\infty)$, and the desired state is zero.
-This measure is also a coarse measure that is quick to calculate and easy to understand. The magnitude of the problem will be relative to the scale of the landscape, so it may not be reasonable to directly compare this indicator across landscapes of different sizes, however it will be useful for grasping the overall scale of the problem in a given landscape.
+where $H_m \in [0,\infty)$, and the desired state is zero.\\
+
+This measure is also a coarse measure that is quick to calculate and easy to understand. The magnitude of the problem will be relative to the scale of the landscape, so it may not be reasonable to directly compare this indicator across landscapes of different sizes, however it will be useful for grasping the overall scale of the problem in a given landscape.\\
 
 \subsubsection*{Human dimension --- sub-index:}
-
 This sub-index $\chi_h$ is calculated as the arithmetic mean of  the human-dimension frequency and severity indicators:
 
 \begin{equation*}
     \chi_h = \frac{H_f + H_s}{2}
 \end{equation*}
 
-where $\chi_h \in [0,1]$ and zero is the desired state. This sub-index equally weights and aggregates the frequency and severity measures.
+where $\chi_h \in [0,1]$ and zero is the desired state. This sub-index equally weights and aggregates the frequency and severity measures.\\
 
 \subsection*{Economic dimension}
 
@@ -398,14 +399,14 @@ As with $H_f$, it may often not be possible to determine whether the same househ
 
 and $E_f^\ast \in [0,1]$.\\
 
-It is likely that for most purposes it will only be possible or calculate $E_f^\ast$.
+It is likely that for most purposes it will only be possible or calculate $E_f^\ast$.\\
 
 \subsubsection*{Economic dimension --- severity indicator:}
-This indicator $E_s$ is defined as the landscape arithmetic mean over each entity in the in the landscape which experienced economic loss due to HWC, $a$, of the net entity (household) economic loss, $l_i$, divided by entity (household) economic wealth, $w_i$:
+This indicator $E_s$ is defined as the landscape arithmetic mean over each entity $i$ in the in the landscape which experienced economic loss due to HWC, for at total of $a$ entities, of the net entity (household) economic loss, $l_i$, divided by entity (household) economic wealth, $w_i$:
 
 \begin{align*}
     E_s = \begin{cases}
-        \sum_{i=1}^{j}(\frac{l_i}{w_i})/a & a > 0 \\
+        \sum_{i=1}^{a}(\frac{l_i}{w_i})/a & a > 0 \\
         0                                     & a = 0
     \end{cases}
 \end{align*}
@@ -414,12 +415,12 @@ where $E_s \in [0,1]$, and zero is the desirable state. \\
 
 An entity in this case is considered either a household or business. The purpose of this delineation to entity level wealth $w_i$ is intended to make the index sensitive to the wealth of the those effected by HWC. If poorer households are disproportionately effected by HWC, the use of some a landscape average of wealth, $\overline{w}$, will mask the severity of the incidents relative to the household effected. Conversely if large companies tend to be the victims, all things being equal then such landscape averages will overstate the problem. \\
 
-However as with other indicators, it may not be practical to know either the entity wealth, $w_i$, or the exact number of entities that are victims of economic incidents. Again if we again assume  that the total number of economic incidents approximates the number of entities experiencing economic incidents, $b \simeq a$, and use a landscape-level average household wealth $\overline{w}$, then we may approximate $E_s^\ast \simeq E_s$ where:
+However as with other indicators, it may not be practical to know either the entity wealth, $w_i$, or the exact number of entities that are victims of economic incidents. Again if we again assume  that the total number of economic incidents $b$ approximates the number of entities experiencing economic incidents $a$, so $b \simeq a$, and use a landscape-level average household wealth $\overline{w}$, then we may approximate $E_s^\ast \simeq E_s$ where:
 
 \begin{equation*}
     E_s^\ast = \begin{cases}
-    1                   & b > 0,\; \sum_{i=1}^{j}(\frac{l_i}{\overline{w}})/b > 1\\
-    \sum_{i=1}^{j}(\frac{l_i}{\overline{w}})/b & b > 0,\; \sum_{i=1}^{j}(\frac{l_i}{\overline{w}})/b \le 1 \\
+    1                   & b > 0,\; \sum_{i=1}^{b}(\frac{l_i}{\overline{w}})/b > 1\\
+    \sum_{i=1}^{b}(\frac{l_i}{\overline{w}})/b & b > 0,\; \sum_{i=1}^{b}(\frac{l_i}{\overline{w}})/b \le 1 \\
     0                   & b = 0 \\
     \end{cases}
 \end{equation*}
@@ -434,7 +435,7 @@ This indicator $E_m$ is defined as the net economic loss in the landscape, and c
     E_m = \sum_{i=1}^{j}l_i
 \end{equation*}
 
-The indicator can be defined in any arbitrary unit or local currency, however the same unit must be used to allow comparisons among landscapes.
+The indicator can be defined in any arbitrary unit or local currency, however the same unit must be used to allow comparisons among landscapes.\\
 
 \subsubsection*{Economic dimension --- sub-index:}
 
@@ -443,41 +444,41 @@ This sub-index $\chi_e$ is calculated as the arithmetic mean of  the economic-di
     \chi_e = \frac{E_f + E_s}{2}
 \end{equation*}
 
-where $\chi_e \in [0,1]$ and one is the desired state. This sub-index equally weights and aggregates the frequency and severity measures.
+where $\chi_e \in [0,1]$ and zero is the desired state. This sub-index equally weights and aggregates the frequency and severity measures.\\
 
 \subsection*{Wildlife}
 
 \subsubsection*{Wildlife dimension --- frequency indicator:}
 
-This indicator $W_f$ is considered as one minus the probability of wildlife-victim incidents (generally reprisal killing or otherwise harming of perceived perpetrator species) given HWC incidents. It is calculated as one minus the number of wildlife-victim incidents divided by the number of human-centric HWC incidents (human-victim incidents and economic incidents):
+This indicator $W_f$ is considered as the probability of wildlife-victim incidents (generally reprisal killing or otherwise harming of perceived perpetrator species) given HWC incidents. It is calculated as the number of wildlife-victim incidents divided by the number of human-centric HWC incidents (human-victim incidents and economic incidents):
 
 \begin{equation*}
     W_f = \begin{cases}
-    0                   &  v +b > 0,\; r > v +b \\
-    1 - \frac{r}{v + b} & v + b > 0,\; r \le v + b \\
-    1                   & v + b = 0 \\
+    1               & r > v + b \\
+    \frac{r}{v + b} & r \le v + b,\; v + b > 0\\
+    0               & r \le v + b,\; v + b = 0 \\
     \end{cases}
 \end{equation*}
 
-where $W_f \in [0,1]$ and one is the desired state. Reasons for constraining the values of $W_f$ based on $r$, $v$, $b$ are as per those given for constraining $H_s$.
+where $W_f \in [0,1]$ and one is the desired state. Reasons for constraining the values of $W_f$ based on $r$, $v$, $b$ are as per those given for constraining $H_s$.\\
 
 \subsubsection*{Wildlife dimension --- severity indicator:}
 This indicator $W_s$ is dependant on whether wildlife-victim incident are occurring, and the IUCN Red List status of the species, subspecies, or population of interest. The specific values of $W_s$ are prescribed:
 
 \begin{equation*}
     W_s = \begin{cases}
-    0   & r > 0, \; s = CR \\
-    0.2 & r > 0, \; s = EN \\
-    0.4 & r > 0, \; s = VU \\
-    0.6 & r > 0, \; s = NT \\
-    0.8 & r > 0, \; s \in (LC, NE, DD) \\
-    1   & r = 0
+    1   & r > 0, \; s = CR \\
+    0.8 & r > 0, \; s = EN \\
+    0.6 & r > 0, \; s = VU \\
+    0.4 & r > 0, \; s = NT \\
+    0.2 & r > 0, \; s \in (LC, NE, DD) \\
+    0   & r = 0
     \end{cases}
 \end{equation*}
 
-where $W_s \in [0,1]$ and one is the desired state.
+where $W_s \in [0,1]$ and zero is the desired state.\\
 
-The scaling of risk between Red List status levels is not linear as implied by this 
+The scaling of extinction risk between Red List status levels may not be linear as implied by this calculation, however this coarse severity indicator represents a measure of the severity of the wildlife dimension of HWC in the context of the species extinction risk.\\
 
 \subsubsection*{Wildlife dimension --- magnitude indicator:}
 This indicator $W_m$ is simply defined as the number of wildlife-victim incidents in the landscape, which will largely be retaliatory killings of the target species:
@@ -486,21 +487,30 @@ This indicator $W_m$ is simply defined as the number of wildlife-victim incident
     W_m = r
 \end{equation*}
 
-where $W_m \in [0,\infty)$, and the desired state is zero.
+where $W_m \in [0,\infty)$, and the desired state is zero.\\
 
-Like $H_m$, this indicator is a coarse measure that is quick to calculate and easy to understand. The magnitude of the problem will be relative to the scale of the landscape, so it may not be reasonable to directly compare this indicator across landscapes of different sizes, however it will be useful for grasping the overall scale of the problem in a given landscape.
+Like $H_m$, this indicator is a coarse measure that is quick to calculate and easy to understand. The magnitude of the problem will be relative to the scale of the landscape, so it may not be reasonable to directly compare this indicator across landscapes of different sizes, however it will be useful for grasping the overall scale of the problem in a given landscape.\\
 
 \subsubsection*{Wildlife dimension --- sub-index:}
-
 This sub-index $\chi_w$ is calculated as the arithmetic mean of  the wildlife-dimension frequency and severity indicators:
 \begin{equation*}
     \chi_w = \frac{W_f + W_s}{2}
 \end{equation*}
 
-where $\chi_w \in [0,1]$ and one is the desired state. This sub-index equally weights and aggregates the frequency and severity measures.
+where $\chi_w \in [0,1]$ and zero is the desired state. This sub-index equally weights and aggregates the frequency and severity measures.\\
 
 \subsection*{Context dimension --- indicators:}
-The context dimension is an opportunity to include a range of indicators relevant to the HWC context of a particular landscape that help to tell the story of HWC in that landscape. Example indicators could include proportion of forest or other habitat cover in a landscape, the population sizes of the target species, measures of urbanization, engagement or policy metrics, or any other measures that managers consider relevant. These are not used in the calculation of any sub-index or index and so the index and sub-indices will still be comparable among landscapes even if different key context indicators are used among landscapes or species.
+The context dimension is an opportunity to include a range of indicators relevant to the HWC context of a particular landscape that help to tell the story of HWC in that landscape. Example indicators could include:
+\begin{itemize}
+    \item proportion of forest cover or habitat metric in the landscape,
+    \item population sizes of target species,
+    \item measures of urbanisation,
+    \item policy or engagement metrics,
+    \item missed school days, or
+    \item counts or proportions of specific types of incidents.
+\end{itemize}
+
+These are not used in the calculation of any sub-index or index and so the index and sub-indices will still be comparable among landscapes even if different key context indicators are used among landscapes or species.\\
 
 \subsection*{Species Human-wildlife Conflict Index}
 This index $X$ is defined as the geometric mean of the three sub-indices, $\chi_h$, $\ch_e$, and $\chi_w$:
@@ -509,20 +519,29 @@ This index $X$ is defined as the geometric mean of the three sub-indices, $\chi_
     X = \sqrt[3]{\chi_h \times \chi_e \times \chi_w}
 \end{equation*}
 
-where $X \in [0,1]$ and one is the desired state, with no HWC of any sort occurring in the landscape.\\
+where $X \in [0,1]$ and zero is the desired state, with no HWC of any sort occurring in the landscape.\\
 
-The aim of this index is to give a simple overview of the state of HWC across a complex range of different elements, which we term dimensions, and axes of impact within them. The index is one mechanism to do this. Like all composite indices however, it masks much nuance within the data set, which is why we propose and strongly advocate for its use along with the suite of indicators to allow managers to better understand specific landscapes.
-Dimension sub-indices are equally weighted, improvements in one dimension will not compensate for deterioration of equal magnitude in other sub-indices because of the use of geometric aggregation. Therefore a high index scores must be the result of high scores in all sub-indices.
+The aim of this index is to give a simple overview of the state of HWC across a complex range of different elements, which we term dimensions, and axes of impact within them. The index is one mechanism to do this. Like all composite indices however, it masks much nuance within the data set, which is why we propose and strongly advocate for its use along with the suite of indicators to allow managers to better understand specific landscapes.\\
 
-\subsection*{Landscape Human-wildlife Conflict Index}
-This index $\Psi$ enables a landscape composition of target species indices into a single multi-species index. $\Psi$ is calculated as the geometric mean of the Species Human-wildlife Conflict Indices $X_\iota$c for each of the $\kappa$ target species in the landscape, where:
+Dimension sub-indices are equally weighted, improvements in one dimension will not compensate for deterioration of equal magnitude in other sub-indices because of the use of geometric aggregation. Therefore a high index scores must be the result of high scores in all sub-indices.\\
+
+\subsection*{Landscape-mean Human-wildlife Conflict Index}
+This index $\Psi_m$ enables a landscape composition of target species indices into a single multi-species index. $\Psi_m$ is calculated as the geometric mean of the Species Human-wildlife Conflict Indices $X_\iota$ for each of the $\kappa$ target species in the landscape, where:
 
 \begin{equation*}
-    \Psi = \sqrt[\kappa]{\prod_{\iota=1}^{\kappa} X_\iota }
+    \Psi_m = \sqrt[\kappa]{\prod_{\iota=1}^{\kappa} X_\iota }
 \end{equation*}
 
-where $\Psi \in [0,1]$ and one is the desired state, with no HWC occurring for any species the landscape.\\
+where $\Psi_m \in [0,1]$ and zero is the desired state, with no HWC occurring for any species the landscape.\\
 
+The interpretation of this landscape-scale index represents the general status of HWC on a per-species level over the landscape.\\
+
+\subsection*{Landscape-aggregate Human-wildlife Conflict Index}
+This index $\Psi_a$ also enables a landscape-scale composition of HWC for all species in the landscape into a multi-species index. $\Psi_a$ is calculated identically to a single species human-wildlife conflict index $X$, however data for all species in the landscape are combined in the calculations. Thus, dimension indicators make use of incidents for all species in their calculations, as opposed to for a single target species, and sub-indices and the overall index $\Psi_a$ are calculated as are the single species sub-indices and index based on these aggregated indicators.\\
+
+As above, $\Psi_a \in [0,1]$ and zero is the desired state, with no HWC occurring for any species the landscape. \\
+
+The interpretation of this landscape scale index $\Psi_a$ is very different from $\Psi_m$: $\Psi_a$ represents an overall status of HWC in the landscape generally, and it will always be the case that $\Psi_a \ge \Psi_m$.\\
 
 \section*{Supplement: Additional figures}
 \begin{figure}[!ht]
