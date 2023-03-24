@@ -343,9 +343,9 @@ This indicator, $H_s$ is defined as the proportion of human-victim incidents tha
 
 \begin{equation*}
     H_s = \begin{cases}
-        1 & m > v \\
-        m/v & v \ge m > 0 \\
-        0       & m = 0 \\
+        1   & m > v \\
+        m/v & m \le v,\; v > 0 \\
+        0   & m \le v,\; v = 0 \\
     \end{cases}
 \end{equation*}
 
@@ -476,9 +476,9 @@ This indicator $W_s$ is dependant on whether wildlife-victim incident are occurr
     \end{cases}
 \end{equation*}
 
-where $W_s \in [0,1]$ and zero is the desired state.\\
+for the categories Critically Endangered (CR), Endangered (EN), Vulnerable (VU), Near Threatened (NT), Least Concern (LC), Not Evaluated (NE), and Data Deficient (DD) categories, and where $W_s \in [0,1]$ and zero is the desired state.\\
 
-The scaling of extinction risk between Red List status levels may not be linear as implied by this calculation, however this coarse severity indicator represents a measure of the severity of the wildlife dimension of HWC in the context of the species extinction risk.\\
+The scaling of extinction risk between Red List status levels may not be linear as implied by this calculation, nor a reflection of the risk of species in NE and DD categories, however this coarse severity indicator represents a measure of the severity of the wildlife dimension of HWC in the context of the species extinction risk.\\
 
 \subsubsection*{Wildlife dimension --- magnitude indicator:}
 This indicator $W_m$ is simply defined as the number of wildlife-victim incidents in the landscape, which will largely be retaliatory killings of the target species:
